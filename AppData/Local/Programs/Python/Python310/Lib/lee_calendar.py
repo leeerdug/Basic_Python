@@ -1,6 +1,7 @@
 import datetime
 
 now = datetime.datetime.now()
+weekday = datetime.datetime.today().weekday()
 
 print("{}년 {}월 {}일 {}시 {}분 {}초".format(
     now.year,
@@ -12,6 +13,7 @@ print("{}년 {}월 {}일 {}시 {}분 {}초".format(
     ))
 
 year = now.year % 12
+weekdays  = ['월요일', '화요일', '수요일', '목요일', '금요일', '토요일', '일요일']
 
 if year == 0:
     print("현재 연도는 {}년으로 원숭이의 해입니다!".format(now.year))
@@ -53,6 +55,8 @@ elif 11 <= now.day <= 20:
     print("현재 날짜는 {}일로 {}월 중순입니다!".format(now.day,now.month))
 else:
     print("현재 날짜는 {}일로 {}월 말입니다!".format(now.day,now.month))
+
+print("현재 요일은 {}입니다.".format(weekdays[weekday]))
 
 if now.hour < 12:
     print("현재 시각은 {}시로 오전입니다!".format(now.hour))
